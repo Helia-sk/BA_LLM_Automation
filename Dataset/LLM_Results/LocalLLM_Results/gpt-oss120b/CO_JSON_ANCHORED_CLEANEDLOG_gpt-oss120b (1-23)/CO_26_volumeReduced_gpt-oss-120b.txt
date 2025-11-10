@@ -1,0 +1,14 @@
+Original file: C:\Users\helia\OneDrive\Uni\6th_Semester\BA\Dataset\Conversion\Json_Cleaned\CO_26_volumeReduced.json
+Processed on: 2025-10-05T19:34:29.015396
+Model used: gpt-oss:120b
+Prompt: Determine if the session was a drop-off or a conversion. Provide a reason for your classification. Then, outline the user journey step-by-step. Format your response as follows: Tag: Conversion||Drop-Off  [Reason]. 1) [Step 1] 2) [Step 2] 3) [Step 3] …
+==================================================
+
+Tag: Conversion [The session includes a “form_submit” event on the menu dashboard followed by a successful POST request to /api/menu/ (returning 201 Created) and a subsequent GET that returns the updated menu list, indicating the user completed the intended action of adding a menu item.]  
+
+1) User opens the restaurant dashboard at /restaurant/dashboard/menu.  
+2) User interacts with the page – clicks and input changes to fill out the new menu item details.  
+3) User submits the form (event form_submit).  
+4) Frontend sends a POST request to /api/menu/ (attempt_id 94f628ca‑…); backend responds with 201 Created (attempt_id e9ed25cf‑…).  
+5) Frontend refreshes the menu by issuing a GET request to /api/menu/ (attempt_id 1126b886‑…); backend returns the updated menu list (status 200, response size 688).  
+6) User sees the newly added item on the menu (implicit success).

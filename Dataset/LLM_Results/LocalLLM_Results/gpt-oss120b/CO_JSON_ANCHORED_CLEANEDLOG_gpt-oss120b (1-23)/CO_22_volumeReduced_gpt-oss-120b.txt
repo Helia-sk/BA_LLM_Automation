@@ -1,0 +1,16 @@
+Original file: C:\Users\helia\OneDrive\Uni\6th_Semester\BA\Dataset\Conversion\Json_Cleaned\CO_22_volumeReduced.json
+Processed on: 2025-10-05T19:23:10.521296
+Model used: gpt-oss:120b
+Prompt: Determine if the session was a drop-off or a conversion. Provide a reason for your classification. Then, outline the user journey step-by-step. Format your response as follows: Tag: Conversion||Drop-Off  [Reason]. 1) [Step 1] 2) [Step 2] 3) [Step 3] …
+==================================================
+
+Tag: Conversion [The user successfully submitted the login form, the backend returned a 200 OK for the login request, and subsequent API calls fetched opening hours, delivery areas, and orders, indicating the user proceeded past the login funnel.]  
+1) User lands on **/restaurant/login** page (frontend events: clicks and input changes).  
+2) User fills in credentials (input_change events) and clicks the submit button (click event).  
+3) User submits the login form (form_submit event).  
+4) Backend receives a **POST /api/login** request and responds with **200 OK** (login.login http_response).  
+5) After authentication, the frontend makes a series of GET requests:  
+   - **GET /api/settings/opening_hours** (settings.get_opening_hours) → 200 OK.  
+   - **GET /api/settings/delivery_areas** (delivery.get_delivery_areas) → 200 OK.  
+   - **GET /api/orders/** (orders.get_orders) → 200 OK.  
+6) All data loads successfully, indicating the user has moved into the authenticated area of the application.

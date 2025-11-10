@@ -1,0 +1,245 @@
+Run 1 – Strict Event Analysis
+
+CO_1 (GT: 1)
+
+Login — Success → False (LLM: said login not completed)
+Summary: 0/1 = 0%
+
+CO_2 (GT: 1)
+
+Registration — Success → False (LLM: said user didn’t register)
+Summary: 0/1 = 0%
+
+CO_3 (GT: 1)
+
+Login (Restaurant) — Success → False (LLM: login not finished)
+Summary: 0/1 = 0%
+
+CO_4 (GT: 1)
+
+Registration (Restaurant) — Success → False (LLM: form not submitted)
+Summary: 0/1 = 0%
+
+CO_5 (GT: 3)
+
+Login — Success → True (LLM: “successfully logs in”)
+
+Add Item to Cart — Success → False (cart addition not marked as success)
+
+Place Order — Success → False (order not completed)
+Summary: 1/3 = 33%
+
+CO_6 (GT: 3)
+
+Login — Success → True (mentioned success)
+
+Add Item to Cart — Success → False (not explicit)
+
+Place Order — Success → False (no order placed)
+Summary: 1/3 = 33%
+
+CO_7 (GT: 4)
+
+Login — Success → True (login noted)
+
+Add Item to Cart — Success → False (not explicit)
+
+Modify Cart (Remove Item) — Success → False (not mentioned)
+
+Place Order — Success → False (no order completion)
+Summary: 1/4 = 25%
+
+CO_8 (GT: 4)
+
+Login — Failed → False (LLM didn’t note failed login)
+
+Login — Success → True (LLM: user logs in)
+
+Add Item to Cart — Success → False (not explicit)
+
+Place Order — Success → False (not completed)
+Summary: 1/4 = 25%
+
+CO_9 (GT: 3)
+
+Add Item to Cart — Success → False (not marked)
+
+Modify Cart (Remove Item) — Success → False
+
+Place Order — Success → False
+Summary: 0/3 = 0%
+
+CO_10 (GT: 2)
+
+Add Item to Cart — Success → False
+
+Place Order — Success → False
+Summary: 0/2 = 0%
+
+CO_11 (GT: 5)
+
+Add Items to Cart — Success → True
+
+Place Order — Failed (Insufficient Balance) → False (LLM said no order placed)
+
+Modify Cart (Remove Items) — Success → False
+
+Add Item to Cart — Success → False
+
+Place Order — Success → False
+Summary: 1/5 = 20%
+
+CO_12 (GT: 1)
+
+Add Menu Item — Success → False (LLM uncertain, no success event)
+Summary: 0/1 = 0%
+
+CO_13 (GT: 1)
+
+Complete Order — Success → False (LLM: unable to determine)
+Summary: 0/1 = 0%
+
+CO_14 (GT: 4)
+
+Login — Success → True
+
+Add Items to Cart — Success → False
+
+Modify Cart (Remove Item) — Success → False
+
+Place Order — Success → False
+Summary: 1/4 = 25%
+
+CO_15 (GT: 3)
+
+Login — Success → True
+
+Add Item to Cart — Success → False
+
+Place Order — Success → False
+Summary: 1/3 = 33%
+
+CO_16 (GT: 4)
+
+Login — Success (first) → True
+
+Login — Success (second) → False (not mentioned twice)
+
+Add Item to Cart — Success → False
+
+Place Order — Success → False
+Summary: 1/4 = 25%
+
+CO_17 (GT: 3)
+
+Add Item to Cart — Success → False
+
+Add Special Instructions — Success → False
+
+Place Order — Success → False
+Summary: 0/3 = 0%
+
+CO_18 (GT: 2)
+
+Add Menu Item — Failed (Missing Description) → True (LLM said abandoned before success)
+
+Add Menu Item — Success → False
+Summary: 1/2 = 50%
+
+CO_19 (GT: 2)
+
+Add Menu Item (Dessert) — Success → False
+
+Add Menu Item (Drink) — Success → False
+Summary: 0/2 = 0%
+
+CO_20 (GT: 4)
+
+Login — Success → True
+
+Add Item to Cart — Success → False
+
+Add Special Instructions — Success → False
+
+Place Order — Success → False
+Summary: 1/4 = 25%
+
+CO_21 (GT: 2)
+
+Login — Success → False
+
+Update Profile (Description) — Success → False
+Summary: 0/2 = 0%
+
+CO_22 (GT: 2)
+
+Login — Success → False
+
+Update Settings (Opening Hours) — Success → False
+Summary: 0/2 = 0%
+
+CO_23 (GT: 2)
+
+Login — Success → False
+
+Update Settings (Postal Code) — Success → False
+Summary: 0/2 = 0%
+
+CO_24 (GT: 2)
+
+Login — Success → False
+
+Edit Menu Item (Price) — Success → False
+Summary: 0/2 = 0%
+
+CO_25 (GT: 2)
+
+Login — Success → True
+
+Delete Menu Item — Success → False (LLM: said “Conversion” for menu but not delete action)
+Summary: 1/2 = 50%
+
+CO_26 (GT: 2)
+
+Add Menu Item — Failed (Empty Description) → True
+
+Add Menu Item — Success → False
+Summary: 1/2 = 50%
+
+CO_27 (GT: 2)
+
+Login — Success → True
+
+Accept Order — Success → False (LLM didn’t confirm accept action as success)
+Summary: 1/2 = 50%
+
+CO_28 (GT: 2)
+
+Login — Success → False
+
+Complete Order — Success → False
+Summary: 0/2 = 0%
+
+CO_29 (GT: 3)
+
+Login — Success → True
+
+Complete Order — Success → False
+
+Update Settings (Postal Code) — Success → False
+Summary: 1/3 = 33%
+
+CO_30 (GT: 2)
+
+Login — Success → False
+
+Complete Order — Success → False
+Summary: 0/2 = 0%
+
+Overall  Accuracy 
+
+Total GT events: 69
+
+Correctly captured (True): 14
+
+Accuracy: 14/69 ≈ 20.3%

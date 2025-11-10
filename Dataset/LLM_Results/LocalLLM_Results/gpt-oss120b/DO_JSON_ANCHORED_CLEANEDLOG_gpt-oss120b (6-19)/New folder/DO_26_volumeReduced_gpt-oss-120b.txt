@@ -1,0 +1,15 @@
+Original file: C:\Users\helia\OneDrive\Uni\6th_Semester\BA\Dataset\Drop_off\Json_Cleaned\DO_26_volumeReduced.json
+Processed on: 2025-10-05T22:29:04.213732
+Model used: gpt-oss:120b
+Prompt: Determine if the session was a drop-off or a conversion. Provide a reason for your classification. Then, outline the user journey step-by-step. Format your response as follows: Tag: Conversion||Drop-Off  [Reason]. 1) [Step 1] 2) [Step 2] 3) [Step 3] …
+==================================================
+
+**Tag: Conversion** – The session includes a successful login (POST /api/login → 200), a subsequent authenticated action (GET /api/orders/ → 200), and a proper logout (POST /api/logout → 200). The user progressed from the login page through to completing core backend interactions, indicating a completed conversion rather than an abandonment.
+
+**User Journey:**  
+1) User arrives on the login page `/restaurant/login` (frontend clicks & input changes).  
+2) User enters credentials (multiple `input_change` events).  
+3) User clicks the submit button (frontend `click` event).  
+4) User submits the login form (frontend `form_submit` event) → backend receives **POST /api/login** and returns **200**.  
+5) Authenticated user requests their orders (backend **GET /api/orders/**) and receives a **200** response with order data.  
+6) User finishes the session and logs out (backend **POST /api/logout**) receiving a **200** response.
